@@ -6,8 +6,11 @@ from phi.storage.agent.sqlite import SqlAgentStorage
 from phi.tools.yfinance import YFinanceTools
 from dotenv import load_dotenv
 from phi.playground import Playground, serve_playground_app
+import os
 
 load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 web_agent=Agent(
     name="Web Agent",

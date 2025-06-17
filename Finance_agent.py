@@ -3,8 +3,11 @@ from phi.model.groq import  Groq
 from phi.model.openai import OpenAIChat
 from phi.tools.yfinance import YFinanceTools
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 def get_company_symbol(company: str) -> str:
     symbols = {
